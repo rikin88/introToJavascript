@@ -1,0 +1,22 @@
+<html>
+<body>
+	<script>
+		var numbers = [1,2,3,4,5];
+
+        function isLessThan3(value, index, array) {
+            var retVal = false;
+
+            if(value<3) {
+                retVal = true;
+            }
+
+            return retVal;
+        }
+
+        if(numbers.some(isLessThan3)) {
+            var result = numbers.filter(isLessThan3);
+            document.write("Filtered numbers are: " + result);
+        }
+	</script>
+</body>
+</html>
