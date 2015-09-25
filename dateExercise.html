@@ -1,0 +1,24 @@
+<html>
+<body>
+	<script>
+		var today = new Date();
+        document.write("Todays date is: " + today); 
+
+        today.setMonth(today.getMonth() + 12);
+        document.write("<br/>day: " + today.getDate());
+        document.write("<br/>month: " + today.getMonth());
+        document.write("<br/>year: " + today.getFullYear());
+        
+/*
+        var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                        "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+          var nowDate = new Date();
+
+          nowDate.setMonth(nowDate.getMonth() + 12);
+          document.write("Date 12 months ahead is " + nowDate.getDate());
+          document.write(" " + months[nowDate.getMonth()]);
+          document.write(" " + nowDate.getFullYear());*/
+	</script>
+</body>
+</html>
