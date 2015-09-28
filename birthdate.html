@@ -1,0 +1,21 @@
+ <html lang="en">
+  <head>
+      <title>Chapter 5: Question 2</title>
+  </head>
+
+  <body>
+      <div id="output">
+        <script>
+
+          var daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday",
+                      "Thursday", "Friday", "Saturday"];
+          var year = prompt("year", "1978");
+          var month = prompt("month", "12");
+          var day = prompt("day", "26");
+
+          var birthdate = new Date(year, month-1, day);
+          document.write(daysOfWeek[birthdate.getDay()]);
+        </script>
+      </div>
+  </body>
+  </html>

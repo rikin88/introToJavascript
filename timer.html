@@ -1,0 +1,21 @@
+ <html lang="en">
+  <head>
+      <title>Chapter 5: Question 2</title>
+  </head>
+
+  <body>
+      <div id="output">
+        <script>
+          function doThisLater() {
+            document.getElementById("output").innerHTML = new Date();
+          }
+
+          /*var timerId = setTimeout(doThisLater, 3000);
+          clearTimeout(timerId);*/
+
+          setInterval(doThisLater, 3000);
+
+        </script>
+      </div>
+  </body>
+  </html>

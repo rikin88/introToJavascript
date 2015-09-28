@@ -1,0 +1,47 @@
+ <html lang="en">
+  <head>
+      <title>Chapter 5: Question 2</title>
+  </head>
+
+  <body>
+      <div id="output">
+        <script>
+        	function geoSuccess(position) {
+        		var coords = position.coords;
+        		var longitude = coords.longitude;
+        		var latitude = coords.latitude;
+
+        		document.write("you are at : " + latitude + ", " + longitude + "<br/>");
+        	}
+        	function geoError(errorObj) {
+        		document.write(errorObj.message);
+        	}
+
+        	navigator.geolocation.getCurrentPosition(geoSuccess, geoError);
+
+        	var colorDepth = window.screen.colorDepth;
+
+              switch (colorDepth) {
+                  case 1:
+                  case 4:
+                      document.bgColor = "white";
+                      break;
+                  case 8:
+                  case 15:
+                  case 16:
+                      document.bgColor = "blue";
+                      break;
+                  case 24:
+                  case 32:
+                      document.bgColor = "skyblue";
+                      break;
+                  default:
+                      document.bgColor = "white";
+              }
+
+              document.write("Your screen supports " + colorDepth +
+                             "bit color");
+        </script>
+      </div>
+  </body>
+  </html>

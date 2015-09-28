@@ -1,0 +1,19 @@
+ <html lang="en">
+  <head>
+      <title>Chapter 5: Question 2</title>
+  </head>
+
+  <body>
+      <script>
+         var myListString = "apple, banana, peach, orange";
+         var myFruitArray = myListString.split(", ");
+         document.write(myFruitArray + "<br/>");
+
+         var myListString2 = "apple, 0.99, banana, 0.50, peach, 0.25, orange, 0.75";
+         var regExp = /[^a-z]+/i;
+         var myFruitArray2 = myListString2.split(regExp);
+         document.write(myFruitArray2.join("<br/>"));
+
+      </script>
+  </body>
+  </html>

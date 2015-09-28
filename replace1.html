@@ -1,0 +1,17 @@
+ <html lang="en">
+  <head>
+      <title>Chapter 5: Question 2</title>
+  </head>
+
+  <body>
+      <script>
+         var text = "He then said 'My Name is O'Connely, yes " + "that's right, O'Connerly'";
+         document.write("original string: " + text + "<br/>");
+
+         var regExp = /\B'|'\B/g;
+         text = text.replace(regExp, '"');
+         document.write("replaced string: " + text + "<br/>");
+
+      </script>
+  </body>
+  </html>
