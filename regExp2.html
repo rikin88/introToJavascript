@@ -1,0 +1,48 @@
+ <html lang="en">
+  <head>
+      <title>Chapter 5: Question 2</title>
+  </head>
+
+  <body>
+      <script>
+         var myString = "Hello world!, let's look at boundaries said 007.";
+         document.write(myString + "<br/>");  
+         var myRegExp = /\b/g;
+         myString = myString.replace(myRegExp, "|");
+         document.write(myString);
+
+         var myString2 = "Hello world!, let's look at boundaries said 007.";
+         var myRegExp2 = /\B/g;
+         myString2 = myString2.replace(myRegExp2, "|");
+         document.write("<br/>" + myString2);
+
+
+         var myString3 = "Paul, Paula, Pauline, paul, Paul";
+         document.write("<br/>" + myString3);
+         var myRegExp3 = /Paul\b/gi
+
+         myString3 = myString3.replace(myRegExp3, "Ringo");
+         document.write("<br/>" + myString3);
+
+         var myString4 = "Paul, Paula, Pauline, paul, Paul, JeanPaul";
+         var myRegExp4 = /\bPaul\b/gi;
+         document.write("<br/>" + myString4);
+         myString4 = myString4.replace(myRegExp4, "Ringo");
+         document.write("<br/>" + myString4);
+
+         var myString5 = "JavaScript, VBScript, and PHP";
+         var myRegExp5 = /\b(VB|Java)Script\b/gi;
+         document.write("<br/>" + myString5);
+         myString5 = myString5.replace(myRegExp5, "xxx");
+         document.write("<br/>" + myString5);
+
+         var myString6 = "007,007,001,002,002,003,002,004";
+         var myRegExp6 = /(\d+),\1/g;
+         document.write("<br/>" + myString6);
+         myString6 = myString6.replace(myRegExp6, "ERROR");
+         document.write("<br/>" + myString6);
+
+
+      </script>
+  </body>
+  </html>

@@ -1,0 +1,22 @@
+ <html lang="en">
+  <head>
+      <title>Chapter 5: Question 2</title>
+  </head>
+
+  <body>
+      <script>
+         var values = prompt("enter comma seperated values.", "Apples, Oranges, Bananas");
+
+         function splitAndReverse(csv) {
+          var parts = csv.split(",");
+          parts.reverse();
+
+          var reversedString = parts.join(", ");
+          document.write("reversed String: " + reversedString);
+         } 
+
+         splitAndReverse(values);
+
+      </script>
+  </body>
+  </html>
