@@ -1,0 +1,25 @@
+<html>
+<body>
+	<script>
+		function createPerson(firstName, lastName) {
+			return {
+				firstName: firstName,
+				lastName : lastName,
+				getFullName: function(person) {
+					return this.firstName + " " + this.lastName
+				},
+				greet: function(person) {
+					document.write("Hello, " + person.getFullName() + 
+						". I'm " + this.getFullName());
+				}
+
+			};
+		}
+
+		var johnDoe = createPerson("John", "Doe");
+		var janeDoe = createPerson("Jane", "Doe");
+
+		johnDoe.greet(janeDoe);
+	</script>
+</body>
+</html>
