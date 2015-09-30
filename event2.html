@@ -1,0 +1,15 @@
+<html>
+	<body>
+		<a id="someLink" href="somepage.html">ClickMe </a>
+
+		<script>
+			var link = document.getElementById("someLink");
+
+			link.addEventListener("click", function(e) {
+				alert("This link is going nowhere");
+				e.preventDefault();
+			}) ;
+		</script>		
+
+	</body>
+</html>

@@ -1,0 +1,42 @@
+<html>
+	<body>
+		<img id="img0" src="usa.gif" />
+		<div id="status" />
+
+		<script>
+			var myImages = [
+				"usa.gif",
+				"mexico.gif",
+				"jamaica.gif",
+				"canada.gif"
+			];
+
+			function changeImg(e) {
+				var e1 = e.target;
+				var newImgNumber = Math.round(Math.random() * 3);
+
+				while(e1.src.indexOf(myImages[newImgNumber]) != -1) {
+					newImgNumber = Math.round(Math.random() * 3);
+				}
+
+				e1.src = myImages[newImgNumber];
+			}
+
+			function updateStatus(e) {
+				var e1 = e.target;
+				var status = document.getElementById("status");
+				status.innerHTML = "This image changed to " + e1.src;
+
+				if(e1.src.indexOf("mexico") > -1) {
+					e1.removeEventListener("click", changeImg);
+					e1.removeEventListener("click", updateStatus);
+				}
+			}
+
+			var imgObj = document.getElementById("img0");
+			imgObj.addEventListener("click", changeImg);
+			imgObj.addEventListener("click", updateStatus);
+
+		</script>
+	</body>
+</html>
