@@ -14,7 +14,7 @@
          var input = prompt("Enter a passphrase" , "");
 
          function isValid(text) {
-          var regExp = /[^a-z\d]/i;
+          var regExp = /[^a-z\d ]/i;
           return !(regExp.test(text));
          }
 
