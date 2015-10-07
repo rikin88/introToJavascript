@@ -1,0 +1,20 @@
+<html>
+<body>
+	<h1>Welcome to example 3a</h1>
+	<div id="whatsNew"></div>
+
+	<script>
+		var lastUpdated = new Date("Tue, 28 Dec 2020");
+		var lastVisit = localStorage.lastVisit;
+
+		if(lastVisit) {
+			lastVisit = new Date(lastVisit);
+
+			if(lastVisit < lastUpdated) {
+				document.getElementById("whatsNew").innerHTML = "<a href='ch13_example3b.html'>What's New?</a>";
+			}
+		}
+
+		localStorage.lastVisit = new Date();
+	</script>
+</body>

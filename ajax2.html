@@ -1,0 +1,87 @@
+<html>
+	<head>
+		<style>
+			.fieldName {
+				text-align: right;
+			}
+
+			.submit {
+				text-align: right;
+			}
+		</style>
+	</head>
+
+	<body> 
+		<form>
+			<table>
+				<tr>
+					<td class="fieldName">UserName:</td>
+					<td><input type="text" id="userName" /></td>
+					<td><a id="usernameAvailability" href="#">Check Availabilty</td>
+				</tr>
+				<tr>
+					<td class="fieldName">Email:</td>
+					<td><input type="text" id="email" /></td>
+					<td><a id="emailAvailability" href="#">Check Availabilty</td>
+				</tr>
+				<tr>
+					<td class="fieldName">Password:</td>
+					<td><input type="text" id="password" /></td>
+					<td />
+				</tr>
+				<tr>
+					<td colspan="2" class="submit">
+						<input type="submit" value="Submit" />
+					</td>
+					<td />
+				</tr>
+			</table>
+		</form>
+		<script src="httprequest.js"></script>
+		<script>
+			function checkUserName(e) {
+				e.preventDefault();
+
+				var userValue = document.getElementById("userName").value;
+
+				if(!userValue) {
+					alert("Please enter a name to check!");
+					return;
+				}
+				var url = "ch14_formvalidator.php?username=" + userValue;
+				var request = new HttpRequest(url, handleResponse);
+				request.send();
+			}
+
+			function checkEmail(e) {
+				e.preventDefault();
+
+				var emailValue = document.getElementById("email").value;
+				if(!emailValue) {
+					alert("enter valid email");
+					return;
+				}
+
+				var url = "ch14_formvalidator.php?email=" + emailValue;
+
+				var request = new HttpRequest(url, handleResponse);
+				request.send();
+			}
+
+			function handleResponse(responseText) {
+				var response = JSON.parse(responseText);
+
+				if(response.available) {
+					alert(response.searchTerm + " is avaiable!");
+				}
+				else {
+					alert("sorry but " + response.searchTerm + " is not available");
+				}
+			}
+
+			document.getElementById("usernameAvailability").addEventListener("click", checkUserName);
+
+			document.getElementById("emailAvailability").addEventListener("click", checkEmail);
+		</script>
+	</body>
+</html>
